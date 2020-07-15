@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { withRouter, Route } from "react-router-dom";
 
 import MarkerLayer from "./Layer/MarkerLayer";
+import ShadeLayer from "./Layer/ShadeLayer";
 import Tooltip from "components/Tooltip";
 import LogoTile from "./LogoTile";
 
@@ -24,7 +25,7 @@ const MapWrapper = styled.div`
 `;
 
 const Map = (p) => {
-  const { mapCenter, mapZoom, style, data } = p;
+  const { mapCenter, mapZoom, style, data, shadeData, selectedShadeData } = p;
 
   return (
     <MapWrapper>
@@ -38,6 +39,15 @@ const Map = (p) => {
           path={["/", "/suche", "/liste", "/favoriten", "/info"]}
           render={() => <MarkerLayer data={data} />}
         />
+        {shadeData &&
+          shadeData.map((shadeInstance) => {
+            return (
+              <ShadeLayer
+                tilesetID={shadeInstance["tileset_id"]}
+                isVisible={shadeInstance === selectedShadeData}
+              />
+            );
+          })}
         <Tooltip />
         <LogoTile />
       </MapGL>

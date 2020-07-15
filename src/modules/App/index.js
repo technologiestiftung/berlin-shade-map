@@ -9,14 +9,16 @@ const NotFoundRoute = () => <Redirect to="/" />;
 
 const App = (p) => {
   const loadData = useStoreActions((action) => action.loadData);
+  const loadShadeData = useStoreActions((action) => action.loadShadeData);
 
   useEffect(() => {
     loadData();
+    loadShadeData();
 
     setTimeout(() => {
       history.push("/info");
     }, 250);
-  }, [loadData]);
+  }, [loadData, loadShadeData]);
 
   return (
     <Router history={history}>

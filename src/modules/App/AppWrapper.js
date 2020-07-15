@@ -28,7 +28,8 @@ const AppWrapper = () => {
   const mapZoom = useStoreState((state) => state.mapZoom);
   const style = process.env.REACT_APP_MAP_STYLE;
 
-  console.log(filteredData);
+  const shadeData = useStoreState((state) => state.shadeData);
+  const selectedShadeData = useStoreState((state) => state.selectedShadeData);
 
   return (
     <ThemeProvider theme={Theme}>
@@ -44,6 +45,8 @@ const AppWrapper = () => {
         {filteredData && (
           <Map
             data={filteredData}
+            shadeData={shadeData}
+            selectedShadeData={selectedShadeData}
             mapCenter={mapCenter}
             mapZoom={mapZoom}
             style={style}

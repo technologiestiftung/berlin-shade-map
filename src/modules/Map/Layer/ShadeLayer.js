@@ -12,11 +12,11 @@ const ShadeLayer = (p) => {
   };
 
   const LAYOUT_OPTIONS = {
-    visibility: isVisible ? "visible" : "none",
+    visibility: "visible",
   };
 
   const PAINT_OPTIONS = {
-    "raster-opacity": 0.7,
+    "raster-opacity": isVisible ? 0.7 : 0,
   };
 
   return (

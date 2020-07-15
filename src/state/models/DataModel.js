@@ -4,11 +4,13 @@ import c from "config";
 
 const DataModel = {
   data: null,
+  shadeData: null,
   detailData: false,
   highlightData: false,
   selectedData: false,
+  selectedShadeData: null,
   isLoading: computed((state) => {
-    return !state.data;
+    return !state.data && !state.shadeData;
   }),
   loadDataSuccess: action((state, payload) => {
     state.data = payload;
@@ -30,12 +32,37 @@ const DataModel = {
       actions.loadDataFail();
     }
   }),
+  loadShadeDataSuccess: action((state, payload) => {
+    state.shadeData = payload;
+    state.selectedShadeData = payload[0];
+  }),
+  loadShadeDataFail: action((state) => {
+    state.shadeData = null;
+  }),
+  loadShadeData: thunk(async (actions) => {
+    try {
+      const response = await fetch("/data/shadeData.json");
+      const data = await response.json();
+      actions.loadShadeDataSuccess(data);
+    } catch (_) {
+      actions.loadShadeDataFail();
+    }
+  }),
   setHighlightData: action((state, payload) => {
     state.highlightData = payload;
     state.mapCenter = payload ? payload.geometry.coordinates : c.map.mapCenter;
     // state.mapZoom = payload ? [15] : c.map.mapZoom;
   }),
   setSelectedData: action((state, payload) => (state.selectedData = payload)),
+  setSelectedShadeData: action((state, payload) => {
+    if (!state.shadeData) return;
+
+    const filteredShadeData = state.shadeData.find(
+      (shadeInstance, index) => index === payload,
+    );
+
+    state.selectedShadeData = filteredShadeData;
+  }),
 };
 
 export default DataModel;

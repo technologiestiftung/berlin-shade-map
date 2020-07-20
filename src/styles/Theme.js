@@ -30,7 +30,7 @@ export default {
     text: "#000",
     background: "#fff",
     primary: "#07c",
-    secondary: "#30c",
+    secondary: "#f64c72",
     muted: "#f6f6f6",
     lightgrey: "#f5f5f5",
     midgrey: "#d8d8d8",

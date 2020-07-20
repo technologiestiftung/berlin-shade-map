@@ -8,6 +8,7 @@ const DataModel = {
   detailData: false,
   highlightData: false,
   selectedData: false,
+  initialShadeData: null,
   selectedShadeData: null,
   isLoading: computed((state) => {
     return !state.data && !state.shadeData;
@@ -34,7 +35,20 @@ const DataModel = {
   }),
   loadShadeDataSuccess: action((state, payload) => {
     state.shadeData = payload;
-    state.selectedShadeData = payload[0];
+    const currentHour = new Date().getHours();
+    if (currentHour < payload[0]["hour"]) {
+      state.initialShadeData = payload[0];
+      state.selectedShadeData = payload[0];
+    } else if (currentHour > payload[state.shadeData.length-1]["hour"]) {
+      state.initialShadeData = payload[state.shadeData.length-1];
+      state.selectedShadeData = payload[state.shadeData.length-1];
+    } else if (currentHour >= payload[0]["hour"] && currentHour <= payload[state.shadeData.length-1]["hour"]) {
+      state.initialShadeData = payload.find(shadeInstance => shadeInstance["hour"] === currentHour);
+      state.selectedShadeData = payload.find(shadeInstance => shadeInstance["hour"] === currentHour);
+    } else {
+      state.initialShadeData = payload[0];
+      state.selectedShadeData = payload[0];
+    }
   }),
   loadShadeDataFail: action((state) => {
     state.shadeData = null;

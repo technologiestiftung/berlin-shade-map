@@ -21,6 +21,7 @@ function valuetext(value) {
 
 const TimeSelector = (p) => {
   const shadeData = useStoreState((state) => state.shadeData);
+  const initialShadeData = useStoreState((state) => state.initialShadeData);
   const selectedShadeData = useStoreState((state) => state.selectedShadeData);
   const setSelectedShadeData = useStoreActions((a) => a.setSelectedShadeData);
 
@@ -77,7 +78,7 @@ const TimeSelector = (p) => {
       </h2>
       <div className={classes.root}>
         <Slider
-          defaultValue={MIN_TIME}
+          defaultValue={initialShadeData["hour"]}
           getAriaValueText={valuetext}
           aria-labelledby="discrete-slider-custom"
           min={MIN_TIME}

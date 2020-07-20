@@ -58,7 +58,7 @@ const DataModel = {
     if (!state.shadeData) return;
 
     const filteredShadeData = state.shadeData.find(
-      (shadeInstance, index) => index === payload,
+      (shadeInstance, index) => shadeInstance["hour"] === payload,
     );
 
     state.selectedShadeData = filteredShadeData;

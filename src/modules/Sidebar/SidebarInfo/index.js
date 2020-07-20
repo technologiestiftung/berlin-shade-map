@@ -19,8 +19,8 @@ const SidebarInfo = (p) => {
       <SidebarTitle>{title}</SidebarTitle>
       {shadeData && <TimeSelector />}
       <Legend />
-      {paragraphs.map((p) => (
-        <CardParagraph title={p.title} text={p.content}></CardParagraph>
+      {paragraphs.map((p, i) => (
+        <CardParagraph title={p.title} text={p.content} key={i}></CardParagraph>
       ))}
     </>
   );

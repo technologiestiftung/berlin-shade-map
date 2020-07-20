@@ -40,11 +40,12 @@ const Map = (p) => {
           render={() => <MarkerLayer data={data} />}
         />
         {shadeData &&
-          shadeData.map((shadeInstance) => {
+          shadeData.map((shadeInstance, i) => {
             return (
               <ShadeLayer
                 tilesetID={shadeInstance["tileset_id"]}
                 isVisible={shadeInstance === selectedShadeData}
+                key={i}
               />
             );
           })}

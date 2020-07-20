@@ -19,8 +19,8 @@ export default (p) => {
             paddingBottom: [3, 4],
           }}
         >
-          {categories.map(({ id, count, color }) => (
-            <LegendItem count={count} color={color} title={id} />
+          {categories.map(({ id, count, color }, i) => (
+            <LegendItem count={count} color={color} title={id} key={i} />
           ))}
         </div>
       )}

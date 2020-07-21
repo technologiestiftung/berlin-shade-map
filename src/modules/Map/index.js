@@ -25,7 +25,7 @@ const MapWrapper = styled.div`
 `;
 
 const Map = (p) => {
-  const { mapCenter, mapZoom, style, data, shadeData, selectedShadeData } = p;
+  const { mapCenter, mapZoom, style, data, selectedShadeData } = p;
 
   return (
     <MapWrapper>
@@ -39,16 +39,12 @@ const Map = (p) => {
           path={["/", "/suche", "/liste", "/favoriten", "/info"]}
           render={() => <MarkerLayer data={data} />}
         />
-        {shadeData &&
-          shadeData.map((shadeInstance, i) => {
-            return (
-              <ShadeLayer
-                tilesetID={shadeInstance["tileset_id"]}
-                isVisible={shadeInstance === selectedShadeData}
-                key={i}
-              />
-            );
-          })}
+        {selectedShadeData && (
+          <ShadeLayer
+            tilesetID={selectedShadeData["tileset_id"]}
+            isVisible={true}
+          />
+        )}
         <Tooltip />
         <LogoTile />
       </MapGL>

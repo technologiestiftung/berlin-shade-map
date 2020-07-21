@@ -4,6 +4,7 @@ import { jsx } from "theme-ui";
 import { makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import { useStoreState, useStoreActions } from "easy-peasy";
+import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,7 +22,6 @@ function valuetext(value) {
 
 const TimeSelector = (p) => {
   const shadeData = useStoreState((state) => state.shadeData);
-  const initialShadeData = useStoreState((state) => state.initialShadeData);
   const selectedShadeData = useStoreState((state) => state.selectedShadeData);
   const setSelectedShadeData = useStoreActions((a) => a.setSelectedShadeData);
 
@@ -30,6 +30,8 @@ const TimeSelector = (p) => {
   const NOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 12)["hour"];
   const AFTERNOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 15)["hour"];
   const EVENING_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 18)["hour"];
+
+  const [ sliderValue, setSliderValue ] = useState(selectedShadeData["hour"]);
 
   const marks = [
     {
@@ -74,11 +76,11 @@ const TimeSelector = (p) => {
           marginTop: 0,
         }}
       >
-        {valuetext(selectedShadeData["hour"])}
+        {valuetext(sliderValue)}
       </h2>
       <div className={classes.root}>
         <Slider
-          defaultValue={initialShadeData["hour"]}
+          value={sliderValue}
           getAriaValueText={valuetext}
           aria-labelledby="discrete-slider-custom"
           min={MIN_TIME}
@@ -88,6 +90,9 @@ const TimeSelector = (p) => {
           marks={marks}
           track={false}
           color={"secondary"}
+          onChange={(event, value) => {
+            setSliderValue(value);
+          }}
           onChangeCommitted={(event, value) => {
             setSelectedShadeData(value);
           }}

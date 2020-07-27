@@ -31,7 +31,7 @@ export default {
       {
         title: "Worum geht's hier?",
         content:
-          "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Erfrischungsmöglichkeiten wie Schwimmbädern und Brunnen. Außerdem sind Parkplätze und Spielplätze verzeichnet.",
+          "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Orten der Erfrischung: zu Parks, Schwimmbädern, Brunnen und Spielplätzen.",
       },
       {
         title: "Datengrundlage",

@@ -24,19 +24,19 @@ export default {
   },
   about: {
     legend: {
-      id: "art_angebot",
+      id: "OBJART_TXT",
     },
-    title: "Name des Projekts hier",
+    title: "Berliner Erfrischungskarte",
     paragraphs: [
       {
-        title: "Subheadline hier",
+        title: "Worum geht's hier?",
         content:
-          "Lorem ipsum [dolorem](https://www.google.de) est. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+          "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Erfrischungsmöglichkeiten wie Schwimmbädern und Brunnen. Außerdem sind Parkplätze und Spielplätze verzeichnet.",
       },
       {
-        title: "Subheadline hier",
+        title: "Datengrundlage",
         content:
-          "Lorem ipsum [dolorem](https://www.google.de) est. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+          "...",
       },
     ],
   },
@@ -47,9 +47,9 @@ export default {
     title: "Filter und Suche",
     filter: [
       {
-        id: "zielgruppe_themenspezifisch",
+        id: "OBJART_TXT",
         component: "tags",
-        label: "Zielgruppe Themenspezifisch",
+        label: "Art des Features",
       },
       {
         id: "angebote",

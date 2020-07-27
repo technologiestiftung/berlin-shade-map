@@ -29,7 +29,6 @@ const TimeSelector = (p) => {
   const MAX_TIME = shadeData[shadeData.length - 1]["hour"];
   const NOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 12)["hour"];
   const AFTERNOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 15)["hour"];
-  const EVENING_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 18)["hour"];
 
   const [ sliderValue, setSliderValue ] = useState(selectedShadeData["hour"]);
 
@@ -45,10 +44,6 @@ const TimeSelector = (p) => {
     {
       value: AFTERNOON_TIME,
       label: `${valuetext(AFTERNOON_TIME)}`,
-    },
-    {
-      value: EVENING_TIME,
-      label: `${valuetext(EVENING_TIME)}`,
     },
   ];
 

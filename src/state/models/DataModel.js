@@ -9,7 +9,7 @@ const DataModel = {
   highlightData: false,
   selectedData: false,
   selectedShadeData: null,
-  isLoading: computed((state) => {
+  dataIsLoading: computed((state) => {
     return !state.data && !state.shadeData;
   }),
   loadDataSuccess: action((state, payload) => {

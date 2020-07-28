@@ -3,10 +3,7 @@ import styled from "styled-components";
 import { NavLink, withRouter, matchPath } from "react-router-dom";
 import { useStoreActions } from "easy-peasy";
 
-import ListIcon from "@material-ui/icons/List";
 import InfoIcon from "@material-ui/icons/InfoOutlined";
-import SearchIcon from "@material-ui/icons/Search";
-import FavIcon from "@material-ui/icons/FavoriteBorder";
 
 import EdgeButton from "components/EdgeButton";
 import { media } from "styles/Utils";
@@ -39,10 +36,7 @@ const NavItem = styled(NavLink)`
 `;
 
 const navConfig = [
-  { path: "/liste", title: "Listenansicht", icon: <ListIcon /> },
-  { path: "/suche", title: "Suche und Filter", icon: <SearchIcon /> },
   { path: "/info", title: "Über das Projekt", icon: <InfoIcon /> },
-  { path: "/favoriten", title: "Favoriten", icon: <FavIcon /> },
 ];
 
 const Nav = (p) => {

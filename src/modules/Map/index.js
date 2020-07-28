@@ -35,16 +35,18 @@ const Map = (p) => {
         style={style}
         containerStyle={{ height: "100%", width: "100%" }}
       >
-        <Route
-          path={["/", "/suche", "/liste", "/favoriten", "/info"]}
-          render={() => <MarkerLayer data={data} />}
-        />
         {selectedShadeData && (
           <ShadeLayer
             tilesetID={selectedShadeData["tileset_id"]}
             isVisible={true}
           />
         )}
+        <Route
+          path={["/", "/suche", "/liste", "/favoriten", "/info"]}
+          render={() => {
+            return <MarkerLayer data={data} />;
+          }}
+        />
         <Tooltip />
         <LogoTile />
       </MapGL>

@@ -21,7 +21,8 @@ const StyledWrapper = styled(Box)`
 `;
 
 const AppWrapper = () => {
-  const isLoading = useStoreState((state) => state.isLoading);
+  const dataIsLoading = useStoreState((state) => state.dataIsLoading);
+  const styleIsLoading = useStoreState((state) => state.styleIsLoading);
   // const data = useStoreState((state) => state.data);
   const filteredData = useStoreState((state) => state.filteredData);
   const mapCenter = useStoreState((state) => state.mapCenter);
@@ -36,7 +37,7 @@ const AppWrapper = () => {
       <GlobalStyle />
       <DynamicGlobalStyle />
       <StyledWrapper>
-        <LoadingOverlay loading={isLoading} />
+        <LoadingOverlay isLoading={dataIsLoading || styleIsLoading} />
         <Route
           path={["/liste/:itemId", "/liste", "/", "/info"]}
           render={() => <Sidebar data={filteredData} />}

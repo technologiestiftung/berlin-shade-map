@@ -2,6 +2,7 @@ import React from "react";
 import ReactMapboxGl from "react-mapbox-gl";
 import styled from "styled-components";
 import { withRouter, Route } from "react-router-dom";
+import { useStoreActions } from "easy-peasy";
 
 import MarkerLayer from "./Layer/MarkerLayer";
 import ShadeLayer from "./Layer/ShadeLayer";
@@ -27,6 +28,8 @@ const MapWrapper = styled.div`
 const Map = (p) => {
   const { mapCenter, mapZoom, style, data, selectedShadeData } = p;
 
+  const setStyleIsLoading = useStoreActions((action) => action.setStyleIsLoading);
+
   return (
     <MapWrapper>
       <MapGL
@@ -34,6 +37,7 @@ const Map = (p) => {
         center={mapCenter}
         style={style}
         containerStyle={{ height: "100%", width: "100%" }}
+        onStyleLoad={() => setStyleIsLoading(false)}
       >
         {selectedShadeData && (
           <ShadeLayer

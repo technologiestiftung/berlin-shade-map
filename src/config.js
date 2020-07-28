@@ -36,7 +36,7 @@ export default {
       {
         title: "Datengrundlage",
         content:
-          "...",
+          "Die genutzten Daten stammen von [FIS-Broker Berlin](https://fbinter.stadt-berlin.de/fb/index.jsp) und von [berlin.de](https://www.berlin.de/). Diese Karte ist ein Open-Source-Projekt und der [Quellcode](https://github.com/technologiestiftung/berlin-shade-map) auf GitHub verfügbar.",
       },
     ],
   },

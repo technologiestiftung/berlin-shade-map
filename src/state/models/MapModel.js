@@ -10,6 +10,10 @@ const MapModel = {
   setMapZoom: action((state, payload) => {
     state.mapZoom = payload;
   }),
+  styleIsLoading: true,
+  setStyleIsLoading: action((state, payload) => {
+    state.styleIsLoading = payload;
+  })
 };
 
 export default MapModel;

@@ -24,7 +24,7 @@ export default {
   },
   about: {
     legend: {
-      id: "OBJART_TXT",
+      id: "OBJARTNAME",
     },
     title: "Berliner Erfrischungskarte",
     paragraphs: [
@@ -40,71 +40,16 @@ export default {
       },
     ],
   },
-  fav: {
-    title: "Favoriten",
-  },
-  filter: {
-    title: "Filter und Suche",
-    filter: [
-      {
-        id: "OBJART_TXT",
-        component: "tags",
-        label: "Art des Features",
-      },
-      {
-        id: "angebote",
-        component: "tags",
-        label: "Angebote",
-      },
-    ],
-  },
   tooltip: [
     {
-      id: "name",
+      id: "NAMENR",
       component: "title",
-      label: "Institution",
-    },
-    {
-      id: "art_angebot",
-      component: "description",
-      label: "Angebot",
-    },
-  ],
-  detail: [
-    {
-      id: "name",
-      component: "title",
-      label: "Institution",
-    },
-    {
-      id: "art_angebot",
-      component: "description",
-      label: "Angebot",
-    },
-    {
-      id: "bezeichnung",
-      component: "description",
       label: "Bezeichnung",
     },
     {
-      id: "email",
-      component: "link",
-      label: "E-Mail",
-    },
-    {
-      id: "adresse",
+      id: "OBJARTNAME",
       component: "description",
-      label: "Adresse",
-    },
-    {
-      id: "angebote",
-      component: "tags",
-      label: "Angebote",
-    },
-    {
-      id: "zielgruppe_themenspezifisch",
-      component: "tags",
-      label: "Zielgruppen",
+      label: "Objektart",
     },
   ],
 };

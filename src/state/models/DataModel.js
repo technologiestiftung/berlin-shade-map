@@ -9,7 +9,7 @@ const DataModel = {
   highlightData: false,
   selectedData: false,
   selectedShadeData: null,
-  isLoading: computed((state) => {
+  dataIsLoading: computed((state) => {
     return !state.data && !state.shadeData;
   }),
   loadDataSuccess: action((state, payload) => {
@@ -20,8 +20,43 @@ const DataModel = {
     state.data = null;
   }),
   loadData: thunk(async (actions) => {
+    const dataSources = [
+      "/data/spielplaetze.geojson",
+      "/data/parks.geojson",
+      "/data/brunnen.geojson",
+    ];
+
     try {
-      const response = await fetch("/data/data.geojson");
+      const response = await Promise.all(
+        dataSources.map((url) => {
+          return fetch(url).then(response => response.json());
+        }),
+      ).then(dataArray => {
+        const [  spielplaetze, parks, brunnen ] = dataArray;
+        brunnen.features.forEach(brunnen => {
+          brunnen.properties["NAMENR"] = brunnen.properties["NAM"] || "Unbekannter Name";
+          brunnen.properties["OBJARTNAME"] = "Brunnen";
+        })
+        
+        const combinedData = {
+          features: [ ...spielplaetze.features, ...parks.features, ...brunnen.features ]
+        };
+        return combinedData;
+      });
+
+      response.features.forEach((feat) => {
+        feat.properties.autoid = id();
+        feat.properties.isFaved = false;
+      });
+      actions.loadDataSuccess(response);
+
+    } catch (error) {
+      console.error(error);
+      actions.loadDataFail();
+    }
+
+    /* try {
+      const response = await fetch("/data/spielplaetze.geojson");
       const data = await response.json();
       data.features.forEach((feat) => {
         feat.properties.autoid = id();
@@ -30,7 +65,7 @@ const DataModel = {
       actions.loadDataSuccess(data);
     } catch (_) {
       actions.loadDataFail();
-    }
+    } */
   }),
   loadShadeDataSuccess: action((state, payload) => {
     state.shadeData = payload;

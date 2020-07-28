@@ -3,8 +3,6 @@ import { Layer, Feature } from "react-mapbox-gl";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import idx from "idx";
 
-import history from "../../../history";
-
 const paintPropsDefault = {
   "circle-radius": 6,
   "circle-color": "#D4D4D4",
@@ -17,13 +15,12 @@ const MarkerLayer = (p) => {
   const { data } = p;
   const setTooltipPos = useStoreActions((actions) => actions.setTooltipPos);
   const setTooltipData = useStoreActions((actions) => actions.setTooltipData);
-  const setHighlightData = useStoreActions((a) => a.setHighlightData);
   const highlightData = useStoreState((a) => a.highlightData);
   const paintProps = getPaintProps(highlightData);
   // const legendType = c.about.legend.id;
 
   const handleMouseEnter = (evt, { properties = {} }) => {
-    evt.map.getCanvas().style.cursor = "pointer";
+    evt.map.getCanvas().style.cursor = "default";
     setTooltipData(properties);
   };
 
@@ -51,16 +48,6 @@ const MarkerLayer = (p) => {
     setTooltipData(null);
   };
 
-  const handleClick = (evt, data) => {
-    evt.originalEvent.preventDefault();
-    evt.originalEvent.stopPropagation();
-
-    setHighlightData(data);
-
-    const nextLocation = `/liste/${data.properties.autoid}`;
-    history.push(nextLocation);
-  };
-
   const renderFeat = (feat, i) => {
     const feature = (
       <Feature
@@ -68,7 +55,6 @@ const MarkerLayer = (p) => {
         key={`feat-${i}`}
         onMouseEnter={(evt) => handleMouseEnter(evt, feat)}
         onMouseLeave={(evt) => handleMouseLeave(evt)}
-        onClick={(evt) => handleClick(evt, feat)}
         properties={feat.properties}
       />
     );

@@ -40,6 +40,16 @@ export default {
       },
     ],
   },
+  filter: {
+    title: "Filter und Suche",
+    filter: [
+      {
+        id: "OBJARTNAME",
+        component: "tags",
+        label: "Orte",
+      },
+    ],
+  },
   tooltip: [
     {
       id: "NAMENR",

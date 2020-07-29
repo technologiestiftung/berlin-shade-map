@@ -3,14 +3,6 @@ import { Layer, Feature } from "react-mapbox-gl";
 import { useStoreActions, useStoreState } from "easy-peasy";
 import idx from "idx";
 
-const paintPropsDefault = {
-  "circle-radius": 6,
-  "circle-color": "#D4D4D4",
-  "circle-stroke-color": "white",
-  "circle-stroke-width": 4,
-  "circle-opacity": 1,
-};
-
 const MarkerLayer = (p) => {
   const { data } = p;
   const setTooltipPos = useStoreActions((actions) => actions.setTooltipPos);
@@ -67,15 +59,6 @@ const MarkerLayer = (p) => {
 
   return (
     <Fragment>
-      <Layer
-        id="MarkerLayerData"
-        type="circle"
-        paint={paintPropsDefault}
-        onMouseMove={(evt) => handleMouseMove(evt)}
-      >
-        {data.features.map((feat, i) => renderFeat(feat, i))}
-        {/* {data.features.filter(d => !d.properties.filtered).map(feat => renderFeat(feat))} */}
-      </Layer>
       <Layer
         id="MarkerLayer"
         type="circle"

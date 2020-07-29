@@ -3,8 +3,12 @@ import { jsx } from "theme-ui";
 import { useState } from "react";
 import { useStoreActions, useStoreState } from "easy-peasy";
 
+import LegendItem from "../Legend/LegendItem";
+
 export default (p) => {
-  const { data, id } = p;
+  const { data, id, category } = p;
+  const { id: title, count, color } = category;
+  
   const setFilter = useStoreActions((actions) => actions.setFilter);
   const isFilteredState = useStoreState((state) => state.isFiltered);
   const [isFiltered, setIsFiltered] = useState(isFilteredState[id][data]);
@@ -16,10 +20,11 @@ export default (p) => {
 
   return (
     <span
+      {...p}
       sx={{
-        backgroundColor: isFiltered ? "background" : "text",
+        backgroundColor: "background",
         color: isFiltered ? "text" : "background",
-        border: isFiltered ? "1px solid black" : "1px solid white",
+        border: theme => isFiltered ? `1px solid ${theme.colors.midgrey}` : `1px solid black`,
         py: "1",
         px: "3",
         mr: "2",
@@ -30,7 +35,7 @@ export default (p) => {
       }}
       onClick={() => handleClick({ data, id })}
     >
-      {data}
+      <LegendItem count={count} color={color} title={title} key={id} isFiltered={isFiltered} />
     </span>
   );
 };

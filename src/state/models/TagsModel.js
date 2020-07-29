@@ -20,14 +20,13 @@ const TagsModel = {
       features.forEach((feature) => {
         tagVarsArr.forEach(({ id }) => {
           const { properties } = feature;
-          properties[id].forEach((property) => {
-            if (!filter[id].includes(property)) {
-              filter[id].push(property);
-              isFiltered[id][property] = false;
-            }
-          });
+          if (!filter[id].includes(properties[id])) {
+            filter[id].push(properties[id]);
+            isFiltered[id][properties[id]] = false;
+          }
         });
       });
+      
 
       state.filter = filter;
       state.isFiltered = isFiltered;

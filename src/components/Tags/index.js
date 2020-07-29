@@ -1,12 +1,16 @@
 /** @jsx jsx */
 import { jsx, Flex } from "theme-ui";
 import { Fragment } from "react";
+import { useStoreState } from "easy-peasy";
 
 import Tag from "./Tag";
 import CardTitle from "components/Card/CardTitle";
 
 export default (p) => {
   const { filter, filterValues } = p;
+
+  const categories = useStoreState((state) => state.categories);
+
   return (
     <Flex
       sx={{
@@ -22,7 +26,8 @@ export default (p) => {
           <Fragment>
             <CardTitle>{label}</CardTitle>
             {filter[id].map((value) => {
-              return <Tag id={id} data={value} />;
+              const category = categories.find(c => c.id === value);
+              return <Tag id={id} data={value} category={category} />;
             })}
           </Fragment>
         );

@@ -24,17 +24,17 @@ const FilterModel = {
     dataState.features.map((feature) => {
       const { properties } = feature;
       c.filter.filter.forEach(({ id }) => {
-        properties[id].forEach((prop) => {
-          // if prop is set to filtered
-          if (prop === data && localState[id][data]) {
-            properties.filtered = true;
-          }
 
-          // if prop is NOT set to filtered
-          if (prop === data && !localState[id][data]) {
-            properties.filtered = false;
-          }
-        });
+        // if prop is set to filtered
+        if (properties[id] === data && localState[id][data]) {
+          properties.filtered = true;
+        }
+
+        // if prop is NOT set to filtered
+        if (properties[id] === data && !localState[id][data]) {
+          properties.filtered = false;
+        }
+
       });
       return feature;
     });

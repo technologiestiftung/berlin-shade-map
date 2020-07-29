@@ -2,15 +2,15 @@
 import { jsx } from "theme-ui";
 
 export default (p) => {
-  const { color, count, title } = p;
+  const { color, count, title, isFiltered } = p;
   return (
     <div
       sx={{
         textDecoration: "none",
-        color: "text",
-        mb: "3px",
+        color: isFiltered ? "midgrey" : "text",
         display: "flex",
         fontSize: 1,
+        transition: (t) => t.transitions[1],
       }}
     >
       <div

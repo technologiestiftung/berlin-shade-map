@@ -24,6 +24,7 @@ const DataModel = {
       "/data/spielplaetze.geojson",
       "/data/parks.geojson",
       "/data/brunnen.geojson",
+      "/data/schwimmbaeder.geojson"
     ];
 
     try {
@@ -32,14 +33,19 @@ const DataModel = {
           return fetch(url).then(response => response.json());
         }),
       ).then(dataArray => {
-        const [  spielplaetze, parks, brunnen ] = dataArray;
+        const [  spielplaetze, parks, brunnen, schwimmbaeder ] = dataArray;
         brunnen.features.forEach(brunnen => {
           brunnen.properties["NAMENR"] = brunnen.properties["NAM"] || "Unbekannter Name";
           brunnen.properties["OBJARTNAME"] = "Brunnen";
         })
+
+        schwimmbaeder.features.forEach(schwimmbad => {
+          schwimmbad.properties["NAMENR"] = schwimmbad.properties["name"] || "Unbekannter Name";
+          schwimmbad.properties["OBJARTNAME"] = "Schwimmbad";
+        })
         
         const combinedData = {
-          features: [ ...spielplaetze.features, ...parks.features, ...brunnen.features ]
+          features: [ ...spielplaetze.features, ...parks.features, ...brunnen.features, ...schwimmbaeder.features ]
         };
         return combinedData;
       });

@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "auto",
   },
+  slider: {
+    color: "black",
+  },
   margin: {
     height: theme.spacing(3),
   },
@@ -67,7 +70,7 @@ const TimeSelector = (p) => {
         sx={{
           fontSize: 4,
           fontFamily: "Clan Bold",
-          color: "primary",
+          color: "text",
           marginTop: 0,
         }}
       >
@@ -75,9 +78,7 @@ const TimeSelector = (p) => {
       </h2>
       <div className={classes.root}>
         <Slider
-          sx={{
-            color: "primary"
-          }}
+          className={classes.slider}
           value={sliderValue}
           getAriaValueText={valuetext}
           aria-labelledby="discrete-slider-custom"

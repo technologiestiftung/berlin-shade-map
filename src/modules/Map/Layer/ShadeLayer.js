@@ -16,7 +16,7 @@ const ShadeLayer = (p) => {
   };
 
   const PAINT_OPTIONS = {
-    "raster-opacity": isVisible ? 0.7 : 0,
+    "raster-opacity": isVisible ? 0.45 : 0,
   };
 
   return (

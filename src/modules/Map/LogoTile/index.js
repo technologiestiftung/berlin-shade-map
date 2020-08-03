@@ -2,6 +2,8 @@ import React, { PureComponent } from "react";
 import styled from "styled-components";
 
 import CityLABLogo from "components/CityLABLogo";
+import TSBLogo from "components/TSBLogo";
+import BerlinLogo from "components/BerlinLogo";
 
 const StyledLogoTile = styled.div`
   position: absolute;
@@ -29,8 +31,11 @@ class LogoTile extends PureComponent {
   render() {
     return (
       <StyledLogoTile>
-        Ein Projekt des:
         <StyledCityLABLogo />
+        Ein Projekt der:
+        <TSBLogo />
+        Gefördert durch:
+        <BerlinLogo />
       </StyledLogoTile>
     );
   }

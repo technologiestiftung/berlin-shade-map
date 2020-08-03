@@ -23,11 +23,11 @@ export default (p) => {
     >
       {filterValues.map(({ id, label }) => {
         return (
-          <Fragment>
+          <Fragment key={id}>
             <CardTitle>{label}</CardTitle>
             {filter[id].map((value) => {
               const category = categories.find(c => c.id === value);
-              return <Tag id={id} data={value} category={category} />;
+              return <Tag id={id} data={value} category={category} key={value} />;
             })}
           </Fragment>
         );

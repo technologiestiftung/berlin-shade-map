@@ -1,7 +1,7 @@
 export default {
   socialTags: {},
   map: {
-    mapCenter: [13.347142, 52.514575],
+    mapCenter: [13.400033, 52.520952],
     mapZoom: [16],
     marker: {
       color: {

@@ -20,49 +20,8 @@ const DataModel = {
     state.data = null;
   }),
   loadData: thunk(async (actions) => {
-    const dataSources = [
-      "/data/spielplaetze.geojson",
-      "/data/parks.geojson",
-      "/data/brunnen.geojson",
-      "/data/schwimmbaeder.geojson"
-    ];
-
     try {
-      const response = await Promise.all(
-        dataSources.map((url) => {
-          return fetch(url).then(response => response.json());
-        }),
-      ).then(dataArray => {
-        const [  spielplaetze, parks, brunnen, schwimmbaeder ] = dataArray;
-        brunnen.features.forEach(brunnen => {
-          brunnen.properties["NAMENR"] = brunnen.properties["NAM"] || "Unbekannter Name";
-          brunnen.properties["OBJARTNAME"] = "Brunnen";
-        })
-
-        schwimmbaeder.features.forEach(schwimmbad => {
-          schwimmbad.properties["NAMENR"] = schwimmbad.properties["name"] || "Unbekannter Name";
-          schwimmbad.properties["OBJARTNAME"] = "Schwimmbad";
-        })
-        
-        const combinedData = {
-          features: [ ...spielplaetze.features, ...parks.features, ...brunnen.features, ...schwimmbaeder.features ]
-        };
-        return combinedData;
-      });
-
-      response.features.forEach((feat) => {
-        feat.properties.autoid = id();
-        feat.properties.isFaved = false;
-      });
-      actions.loadDataSuccess(response);
-
-    } catch (error) {
-      console.error(error);
-      actions.loadDataFail();
-    }
-
-    /* try {
-      const response = await fetch("/data/spielplaetze.geojson");
+      const response = await fetch("/data/locations.geojson");
       const data = await response.json();
       data.features.forEach((feat) => {
         feat.properties.autoid = id();
@@ -71,7 +30,7 @@ const DataModel = {
       actions.loadDataSuccess(data);
     } catch (_) {
       actions.loadDataFail();
-    } */
+    }
   }),
   loadShadeDataSuccess: action((state, payload) => {
     state.shadeData = payload;

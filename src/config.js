@@ -24,14 +24,14 @@ export default {
   },
   about: {
     legend: {
-      id: "OBJARTNAME",
+      id: "type",
     },
     title: "Berliner Erfrischungskarte",
     paragraphs: [
       {
         title: "Worum geht's hier?",
         content:
-          "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Orten der Erfrischung: zu Parks, Schwimmbädern, Brunnen und Spielplätzen.",
+          "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Orten zum Erfrischen und Verweilen.",
       },
       {
         title: "Datengrundlage",
@@ -44,7 +44,7 @@ export default {
     title: "Filter und Suche",
     filter: [
       {
-        id: "OBJARTNAME",
+        id: "type",
         component: "tags",
         label: "Orte",
       },
@@ -52,14 +52,19 @@ export default {
   },
   tooltip: [
     {
-      id: "NAMENR",
+      id: "name",
       component: "title",
       label: "Bezeichnung",
     },
     {
-      id: "OBJARTNAME",
+      id: "type",
       component: "description",
       label: "Objektart",
+    },
+    {
+      id: "address",
+      component: "description",
+      label: "Adresse",
     },
   ],
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import { useStoreState } from "easy-peasy";
+import { isSafari, isIE } from "react-device-detect";
 
 import c from "config";
 
@@ -7,6 +8,7 @@ import SidebarTitle from "../SidebarTitle";
 import CardParagraph from "components/Card/CardParagraph";
 import TimeSelector from "../../../components/TimeSelector";
 import Tags from "components/Tags";
+import SupportNote from "components/SupportNote";
 
 const SidebarInfo = (p) => {
   const data = c.about;
@@ -19,6 +21,7 @@ const SidebarInfo = (p) => {
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
+      {(isSafari || isIE) && <SupportNote />}
       {shadeData && <TimeSelector />}
       {filterState && <Tags filterValues={filter} filter={filterState} />}
       {paragraphs.map((p, i) => (

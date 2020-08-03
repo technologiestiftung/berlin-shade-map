@@ -1,6 +1,13 @@
 import { actionOn } from "easy-peasy";
-import { schemePaired, scaleOrdinal } from "d3";
+import { scaleOrdinal } from "d3";
 import c from "config";
+
+const customColorScheme = [
+  "#A6CEE3",
+  "#B2DF8A",
+  "#1F78B4",
+  "#E31A1C",
+];
 
 const LegendModel = {
   fetchLegend: actionOn(
@@ -10,7 +17,7 @@ const LegendModel = {
       const legendType = c.about.legend.id;
       let legendArr = [];
       let legendColorCodes = [];
-      const color = scaleOrdinal(schemePaired);
+      const color = scaleOrdinal(customColorScheme);
 
       payload.features.forEach((feature, i) => {
         // const { properties } = feature;

@@ -8,7 +8,7 @@ const MapModel = {
   }),
   mapZoom: c.map.mapZoom,
   setMapZoom: action((state, payload) => {
-    state.mapZoom = payload;
+    state.mapZoom[0] = payload;
   }),
   styleIsLoading: true,
   setStyleIsLoading: action((state, payload) => {

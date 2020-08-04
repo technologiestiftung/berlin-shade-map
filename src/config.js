@@ -10,8 +10,8 @@ export default {
       },
     },
     config: {
-      minZoom: 6,
-      maxZoom: 17,
+      minZoom: 12,
+      maxZoom: 16,
       dragRotate: false,
       bearing: 0,
       maxBounds: [

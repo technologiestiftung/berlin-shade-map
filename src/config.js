@@ -21,6 +21,12 @@ export default {
       accessToken: process.env.REACT_APP_MAP_TOKEN,
       style: process.env.REACT_APP_MAP_STYLE,
     },
+    shades: {
+      tileSize: 256,
+      bounds: [13.1,52.3,13.8,52.7],
+      minZoom: 15,
+      opacity: 0.45,
+    }
   },
   about: {
     legend: {

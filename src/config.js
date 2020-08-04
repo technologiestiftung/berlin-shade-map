@@ -38,6 +38,11 @@ export default {
         content:
           "Die genutzten Daten stammen von [FIS-Broker Berlin](https://fbinter.stadt-berlin.de/fb/index.jsp) und von [berlin.de](https://www.berlin.de/). Die Simulation der Schatten basiert auf Höhendaten von Gebäuden und Objekten und der Sonnenstrahlung im Monat Juli. Diese Karte ist ein Open-Source-Projekt und der [Quellcode](https://github.com/technologiestiftung/berlin-shade-map) auf GitHub verfügbar.",
       },
+      {
+        title: "",
+        content:
+          "[Impressum](https://www.technologiestiftung-berlin.de/de/impressum/) | [Datenschutz](https://www.technologiestiftung-berlin.de/de/datenschutz/)",
+      },
     ],
   },
   filter: {

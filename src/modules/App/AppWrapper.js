@@ -11,6 +11,7 @@ import Map from "modules/Map";
 import Sidebar from "modules/Sidebar";
 import Nav from "components/Nav";
 import LoadingOverlay from "components/LoadingOverlay";
+import ZoomNote from "components/ZoomNote";
 
 const DynamicGlobalStyle = createGlobalStyle``;
 
@@ -43,6 +44,7 @@ const AppWrapper = () => {
           render={() => <Sidebar data={filteredData} />}
         />
         <Nav />
+        <ZoomNote />
         {filteredData && (
           <Map
             data={filteredData}

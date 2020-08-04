@@ -40,10 +40,7 @@ const Map = (p) => {
         onStyleLoad={() => setStyleIsLoading(false)}
       >
         {selectedShadeData && (
-          <ShadeLayer
-            tilesetID={selectedShadeData["tileset_id"]}
-            isVisible={true}
-          />
+          <ShadeLayer tilesetID={selectedShadeData["tileset_id"]} />
         )}
         <Route
           path={["/", "/suche", "/liste", "/favoriten", "/info"]}

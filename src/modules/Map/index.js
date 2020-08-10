@@ -29,6 +29,7 @@ const Map = (p) => {
   const { mapCenter, mapZoom, style, data, selectedShadeData } = p;
 
   const setStyleIsLoading = useStoreActions((action) => action.setStyleIsLoading);
+  const setMapZoom = useStoreActions((action) => action.setMapZoom);
 
   return (
     <MapWrapper>
@@ -38,12 +39,10 @@ const Map = (p) => {
         style={style}
         containerStyle={{ height: "100%", width: "100%" }}
         onStyleLoad={() => setStyleIsLoading(false)}
+        onZoomEnd={(e) => setMapZoom(e.getZoom())}
       >
         {selectedShadeData && (
-          <ShadeLayer
-            tilesetID={selectedShadeData["tileset_id"]}
-            isVisible={true}
-          />
+          <ShadeLayer tilesetID={selectedShadeData["tileset_id"]} />
         )}
         <Route
           path={["/", "/suche", "/liste", "/favoriten", "/info"]}

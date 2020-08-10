@@ -10,7 +10,7 @@ export default {
       },
     },
     config: {
-      minZoom: 6,
+      minZoom: 12,
       maxZoom: 17,
       dragRotate: false,
       bearing: 0,
@@ -21,6 +21,12 @@ export default {
       accessToken: process.env.REACT_APP_MAP_TOKEN,
       style: process.env.REACT_APP_MAP_STYLE,
     },
+    shades: {
+      tileSize: 256,
+      bounds: [13.1,52.3,13.8,52.7],
+      minZoom: 15,
+      opacity: 0.45,
+    }
   },
   about: {
     legend: {
@@ -36,7 +42,12 @@ export default {
       {
         title: "Datengrundlage",
         content:
-          "Die genutzten Daten stammen von [FIS-Broker Berlin](https://fbinter.stadt-berlin.de/fb/index.jsp) und von [berlin.de](https://www.berlin.de/). Diese Karte ist ein Open-Source-Projekt und der [Quellcode](https://github.com/technologiestiftung/berlin-shade-map) auf GitHub verfügbar.",
+          "Die genutzten Daten stammen von [FIS-Broker Berlin](https://fbinter.stadt-berlin.de/fb/index.jsp) und von [berlin.de](https://www.berlin.de/). Die Simulation der Schatten basiert auf Höhendaten von Gebäuden und Objekten und der Sonnenstrahlung im Monat Juli. Diese Karte ist ein Open-Source-Projekt und der [Quellcode](https://github.com/technologiestiftung/berlin-shade-map) auf GitHub verfügbar.",
+      },
+      {
+        title: "",
+        content:
+          "[Impressum](https://www.technologiestiftung-berlin.de/de/impressum/) | [Datenschutz](https://www.technologiestiftung-berlin.de/de/datenschutz/)",
       },
     ],
   },

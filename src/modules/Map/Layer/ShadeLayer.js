@@ -1,14 +1,18 @@
 import React from "react";
+import c from "../../../config";
 
 import { Layer, Source } from "react-mapbox-gl";
 
+const { tileSize, bounds, minZoom, opacity } = c.map.shades;
+
 const ShadeLayer = (p) => {
-  const { tilesetID, isVisible } = p;
+  const { tilesetID } = p;
 
   const RASTER_SOURCE_OPTIONS = {
     type: "raster",
     url: `mapbox://${tilesetID}`,
-    tileSize: 512,
+    tileSize: tileSize,
+    bounds: bounds,
   };
 
   const LAYOUT_OPTIONS = {
@@ -16,7 +20,7 @@ const ShadeLayer = (p) => {
   };
 
   const PAINT_OPTIONS = {
-    "raster-opacity": isVisible ? 0.45 : 0,
+    "raster-opacity":  opacity,
   };
 
   return (
@@ -28,6 +32,7 @@ const ShadeLayer = (p) => {
         sourceId={tilesetID}
         layout={LAYOUT_OPTIONS}
         paint={PAINT_OPTIONS}
+        minZoom={minZoom}
       />
     </>
   );

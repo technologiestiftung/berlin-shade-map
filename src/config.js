@@ -78,4 +78,12 @@ export default {
       label: "Adresse",
     },
   ],
+  cookies: {
+    text: "Diese Webseite verwendet Cookies, um bestimmte Funktionen zu ermöglichen und das Angebot zu verbessern. Indem du hier fortfährst stimmst du der Nutzung von Cookies zu.",
+    link: {
+      text: "Weitere Informationen",
+      url: "https://www.technologiestiftung-berlin.de/de/datenschutz/"
+    },
+    cookie: "disclaimerAccepted=true;path=/;max-age=31536000;"
+  },
 };

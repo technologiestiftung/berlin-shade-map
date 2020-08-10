@@ -12,6 +12,7 @@ import Sidebar from "modules/Sidebar";
 import Nav from "components/Nav";
 import LoadingOverlay from "components/LoadingOverlay";
 import ZoomNote from "components/ZoomNote";
+import Cookies from "components/Cookies";
 
 const DynamicGlobalStyle = createGlobalStyle``;
 
@@ -45,6 +46,7 @@ const AppWrapper = () => {
         />
         <Nav />
         <ZoomNote />
+        <Cookies />
         {filteredData && (
           <Map
             data={filteredData}

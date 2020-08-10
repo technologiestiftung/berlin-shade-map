@@ -13,6 +13,13 @@ const MapModel = {
   styleIsLoading: true,
   setStyleIsLoading: action((state, payload) => {
     state.styleIsLoading = payload;
+  }),
+  mapboxCookieAccepted: document.cookie ? document.cookie
+    .split('; ')
+    .find(row => row.startsWith('disclaimerAccepted'))
+    .split('=')[1] : false,
+  setMapboxCookieAccepted: action((state, payload) => {
+    state.mapboxCookieAccepted = payload;
   })
 };
 

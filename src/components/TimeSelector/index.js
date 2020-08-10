@@ -9,6 +9,7 @@ import { useState } from "react";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "auto",
+    padding: `0 ${theme.spacing(3)}px`,
   },
   slider: {
     color: "black",
@@ -30,8 +31,7 @@ const TimeSelector = (p) => {
   const MIN_TIME = shadeData[0]["hour"];
   const MAX_TIME = shadeData[shadeData.length - 1]["hour"];
   const MORNING_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 10)["hour"];
-  const NOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 12)["hour"];
-  const AFTERNOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 14)["hour"];
+  const AFTERNOON_TIME = shadeData.find(shadeInstance => shadeInstance["hour"] === 15)["hour"];
 
   const [ sliderValue, setSliderValue ] = useState(selectedShadeData["hour"]);
 
@@ -39,10 +39,6 @@ const TimeSelector = (p) => {
     {
       value: MORNING_TIME,
       label: `${valuetext(MORNING_TIME)}`,
-    },
-    {
-      value: NOON_TIME,
-      label: `${valuetext(NOON_TIME)}`,
     },
     {
       value: AFTERNOON_TIME,

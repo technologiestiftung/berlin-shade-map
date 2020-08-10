@@ -7,6 +7,7 @@ const customColorScheme = [
   "#B2DF8A",
   "#1F78B4",
   "#E31A1C",
+  "#09AAA4",
 ];
 
 const LegendModel = {

@@ -13,11 +13,11 @@ export default (p) => {
         margin: 3,
         zIndex: 1000000,
         position: "absolute",
-        height: "calc((100vh - 0px) - 24px)",
+        height: "calc(100vh - 24px)",
         transform:
           isvisible === "true"
             ? "translate3d(0, 0, 0)"
-            : "translate3d(-105%, 0, 0)",
+            : "translate3d(calc(-100% - 24px), 0, 0)",
         transition: (theme) => theme.transitions[2],
         overflow: "auto",
       }}

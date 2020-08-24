@@ -9,6 +9,7 @@ import CardParagraph from "components/Card/CardParagraph";
 import TimeSelector from "../../../components/TimeSelector";
 import Tags from "components/Tags";
 import SupportNote from "components/SupportNote";
+import LocationSearch from "components/LocationSearch";
 
 const SidebarInfo = (p) => {
   const data = c.about;
@@ -24,6 +25,7 @@ const SidebarInfo = (p) => {
       {(isSafari || isIE) && <SupportNote />}
       {shadeData && <TimeSelector />}
       {filterState && <Tags filterValues={filter} filter={filterState} />}
+      <LocationSearch />
       {paragraphs.map((p, i) => (
         <CardParagraph title={p.title} text={p.content} key={i}></CardParagraph>
       ))}

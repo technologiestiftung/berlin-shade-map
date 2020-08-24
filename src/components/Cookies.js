@@ -21,6 +21,11 @@ const CookieDiv = styled.div`
   width: 50%;
   background: white;
   transform: translate(50%, 0%);
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    bottom: 0;
+  }
 `;
 
 const Inner = styled.div`

@@ -1,6 +1,6 @@
 import React from "react";
 import { useStoreState } from "easy-peasy";
-import { isSafari, isIE } from "react-device-detect";
+import { isSafari, isIE, isIOS } from "react-device-detect";
 
 import c from "config";
 
@@ -22,7 +22,7 @@ const SidebarInfo = (p) => {
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
-      {(isSafari || isIE) && <SupportNote />}
+      {(isSafari || isIE || isIOS ) && <SupportNote />}
       {shadeData && <TimeSelector />}
       {filterState && <Tags filterValues={filter} filter={filterState} />}
       <LocationSearch />

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown/with-html";
 
 import CardTitle from "./CardTitle";
 
@@ -21,6 +21,8 @@ export default (p) => {
     >
       <CardTitle>{title}</CardTitle>
       <ReactMarkdown
+        linkTarget={"_blank"}
+        escapeHtml={false}
         sx={{
           "> p": {
             mt: 0,

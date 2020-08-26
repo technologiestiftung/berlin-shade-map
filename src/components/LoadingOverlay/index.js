@@ -3,8 +3,8 @@ import styled from "styled-components";
 // import Transition from "react-transition-group/Transition";
 
 const LoadingBackground = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: rgba(255,255,255,.6);
   position: absolute;
   z-index: 1000;

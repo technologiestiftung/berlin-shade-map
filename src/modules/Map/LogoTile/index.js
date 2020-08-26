@@ -15,6 +15,17 @@ const StyledLogoTile = styled.div`
   z-index: 1000;
   font-size: 12px;
 
+  ::before {
+    position: absolute;
+    content: '';
+    width: 120%;
+    height: 120%;
+    transform: translate3D(-10%, -10%, 0);
+    background-color: rgba(255,255,255,.6);
+    filter: blur(20px);
+    z-index: -1;
+  }
+
   @media (max-width: 768px) {
     top: auto;
     bottom: 15px;

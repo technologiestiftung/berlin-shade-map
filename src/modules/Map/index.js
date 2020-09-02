@@ -3,6 +3,7 @@ import ReactMapboxGl from "react-mapbox-gl";
 import styled from "styled-components";
 import { withRouter, Route } from "react-router-dom";
 import { useStoreActions } from "easy-peasy";
+import { easeCubic as d3EaseCubic } from "d3";
 
 import MarkerLayer from "./Layer/MarkerLayer";
 import ShadeLayer from "./Layer/ShadeLayer";
@@ -38,6 +39,7 @@ const Map = (p) => {
         center={mapCenter}
         style={style}
         containerStyle={{ height: "100%", width: "100%" }}
+        animationOptions={{ easing: d3EaseCubic }}
         onStyleLoad={() => setStyleIsLoading(false)}
         onZoomEnd={(e) => setMapZoom(e.getZoom())}
       >

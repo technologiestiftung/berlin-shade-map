@@ -15,7 +15,7 @@ const SupportNote = (p) => {
         marginBottom: [3, 4],
       }}
     >
-      Teile der Karte können in einigen Browsern nicht korrekt dargestellt werden. Bitte öffne die Karte in einem anderen Browser, zum Beispiel in Google Chrome.
+      Teile der Karte können auf einigen Geräten und in einigen Browsern nicht korrekt dargestellt werden. Bitte versuche ein anderes Gerät bzw. einen anderen Browser, um die Karte zu öffnen.
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { useStoreState, useStoreActions } from "easy-peasy";
 
 import c from "../config";
 import CloseIcon from "@material-ui/icons/Close";
+import RoundButton from "./RoundButton";
 
 
 const CookieDiv = styled.div`
@@ -20,6 +21,11 @@ const CookieDiv = styled.div`
   width: 50%;
   background: white;
   transform: translate(50%, 0%);
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    bottom: 0;
+  }
 `;
 
 const Inner = styled.div`
@@ -28,6 +34,7 @@ const Inner = styled.div`
   align-items: center;
   flex-wrap: nowrap;
   justify-content: space-between;
+  gap: 10px;
   padding: 10px;
 `;
 
@@ -73,26 +80,13 @@ const Cookies = () => {
                   {link.text}
                 </a>
           </StyledCardDescription>
-          <button
-            sx={{
-              minWidth: [3],
-              height: [3],
-              borderRadius: "100px",
-              backgroundColor: "white",
-              cursor: "pointer",
-              border: "1px black solid",
-              outline: "0",
-              transition: (theme) => theme.transitions[0],
-              "&:hover": {
-                backgroundColor: "lightgrey",
-              },
-              "& > svg": {
-                fill: "text",
-                transform: "translateY(1px)",
-              },
-            }}
+          <RoundButton
+            aria-label="Cookie-Hinweis schließen"
+            title="Cookie-Hinweis schließen"
             onClick={() => acceptCookie()}
-          ><CloseIcon /></button>
+          >
+            <CloseIcon />
+          </RoundButton>
         </Inner>
       </CookieDiv>
     )}

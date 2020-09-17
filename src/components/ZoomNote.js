@@ -31,8 +31,8 @@ const ZoomNote = () => {
       <div
         sx={{
           fontSize: 1,
-          color: theme => theme.colors.background,
-          backgroundColor: theme => theme.colors.text,
+          color: theme => theme.colors.text,
+          backgroundColor: theme => theme.colors.background,
           padding: [3, 4],
         }}
       >

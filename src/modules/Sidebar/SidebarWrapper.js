@@ -13,7 +13,7 @@ export default (p) => {
         margin: 3,
         zIndex: 1000000,
         position: "absolute",
-        height: "calc(100vh - 24px)",
+        height: "calc(100% - 24px)",
         transform:
           isvisible === "true"
             ? "translate3d(0, 0, 0)"

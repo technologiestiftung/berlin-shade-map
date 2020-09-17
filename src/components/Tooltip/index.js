@@ -9,15 +9,6 @@ const StyledPopup = styled(Popup)`
   &&& {
     max-width: 250px;
     line-height: 1;
-
-    .mapboxgl-popup-content {
-      background: black;
-    }
-
-    .mapboxgl-popup-tip {
-      border-top-color: black;
-    }
-  }
 `;
 
 const Tooltip = (p) => {
@@ -30,7 +21,7 @@ const Tooltip = (p) => {
 
   return (
     <StyledPopup coordinates={tooltipPos} style={{ zIndex: 2000 }}>
-      <CardHeader data={tooltipData} type="white" />
+      <CardHeader data={tooltipData} type="black" />
     </StyledPopup>
   );
 };

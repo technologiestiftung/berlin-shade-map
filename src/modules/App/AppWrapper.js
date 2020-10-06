@@ -17,8 +17,8 @@ import Cookies from "components/Cookies";
 const DynamicGlobalStyle = createGlobalStyle``;
 
 const StyledWrapper = styled(Box)`
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   transition: all 0.25s ease-in-out;
 `;
 

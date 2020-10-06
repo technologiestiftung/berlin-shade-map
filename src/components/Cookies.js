@@ -11,20 +11,20 @@ import RoundButton from "./RoundButton";
 
 
 const CookieDiv = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 15px;
-  right: 50%;
-  z-index: 3000;
+  right: 15px;
+  z-index: 1000001;
   font-size: 10px;
   box-shadow: 0 2px 40px 0 rgba(30, 55, 145, 0.15);
   height: min-content;
-  width: 50%;
+  width: 370px;
   background: white;
-  transform: translate(50%, 0%);
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 768px) {
     width: 100%;
     bottom: 0;
+    right: 0;
   }
 `;
 

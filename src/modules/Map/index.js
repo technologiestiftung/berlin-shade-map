@@ -16,7 +16,7 @@ const mapConfig = c.map.config;
 const MapGL = ReactMapboxGl({ ...mapConfig });
 
 const MapWrapper = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   flex: 1;
   flex-shrink: 1;

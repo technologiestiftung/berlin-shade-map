@@ -8,7 +8,6 @@ import { easeCubic as d3EaseCubic } from "d3";
 import MarkerLayer from "./Layer/MarkerLayer";
 import ShadeLayer from "./Layer/ShadeLayer";
 import Tooltip from "components/Tooltip";
-import LogoTile from "./LogoTile";
 
 import c from "config";
 
@@ -53,7 +52,6 @@ const Map = (p) => {
           }}
         />
         <Tooltip />
-        <LogoTile />
       </MapGL>
     </MapWrapper>
   );

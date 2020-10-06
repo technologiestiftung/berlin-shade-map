@@ -10,6 +10,7 @@ import TimeSelector from "../../../components/TimeSelector";
 import Tags from "components/Tags";
 import SupportNote from "components/SupportNote";
 import LocationSearch from "components/LocationSearch";
+import Logos from "components/Logos";
 
 const SidebarInfo = (p) => {
   const data = c.about;
@@ -29,6 +30,7 @@ const SidebarInfo = (p) => {
       {paragraphs.map((p, i) => (
         <CardParagraph title={p.title} text={p.content} key={i}></CardParagraph>
       ))}
+      <Logos />
     </>
   );
 };

@@ -8,17 +8,19 @@ import history from "../../history";
 const NotFoundRoute = () => <Redirect to="/" />;
 
 const App = (p) => {
+  const checkWebpSupport = useStoreActions((action) => action.checkWebpSupport);
   const loadData = useStoreActions((action) => action.loadData);
   const loadShadeData = useStoreActions((action) => action.loadShadeData);
 
   useEffect(() => {
+    checkWebpSupport();
     loadData();
     loadShadeData();
 
     setTimeout(() => {
       history.push("/info");
-    }, 250);
-  }, [loadData, loadShadeData]);
+    }, 0);
+  }, [checkWebpSupport, loadData, loadShadeData]);
 
   return (
     <Router history={history}>

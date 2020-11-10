@@ -6,7 +6,6 @@ import { useStoreActions } from "easy-peasy";
 import InfoIcon from "@material-ui/icons/InfoOutlined";
 
 import EdgeButton from "components/EdgeButton";
-import { media } from "styles/Utils";
 
 const NavWrapper = styled.div`
   display: flex;
@@ -18,12 +17,6 @@ const NavWrapper = styled.div`
   top: 15px;
   left: 15px;
   z-index: 1000;
-
-  ${media.m`
-    transform: ${(props) =>
-      props.isNavOpen ? "translate3d(375px, 0, 0)" : "none"};
-    transition: transform 375ms;
-  `}
 `;
 
 const NavItem = styled(NavLink)`

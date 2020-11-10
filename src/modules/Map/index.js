@@ -2,7 +2,7 @@ import React from "react";
 import ReactMapboxGl from "react-mapbox-gl";
 import styled from "styled-components";
 import { withRouter, Route } from "react-router-dom";
-import { useStoreActions } from "easy-peasy";
+import { useStoreState, useStoreActions } from "easy-peasy";
 import { easeCubic as d3EaseCubic } from "d3";
 
 import MarkerLayer from "./Layer/MarkerLayer";
@@ -28,8 +28,11 @@ const MapWrapper = styled.div`
 const Map = (p) => {
   const { mapCenter, mapZoom, style, data, selectedShadeData } = p;
 
-  const setStyleIsLoading = useStoreActions((action) => action.setStyleIsLoading);
+  const setStyleIsLoading = useStoreActions(
+    (action) => action.setStyleIsLoading,
+  );
   const setMapZoom = useStoreActions((action) => action.setMapZoom);
+  const webpIsSupported = useStoreState((state) => state.webpIsSupported);
 
   return (
     <MapWrapper>
@@ -42,7 +45,7 @@ const Map = (p) => {
         onStyleLoad={() => setStyleIsLoading(false)}
         onZoomEnd={(e) => setMapZoom(e.getZoom())}
       >
-        {selectedShadeData && (
+        {webpIsSupported && selectedShadeData && (
           <ShadeLayer tilesetID={selectedShadeData["tileset_id"]} />
         )}
         <Route

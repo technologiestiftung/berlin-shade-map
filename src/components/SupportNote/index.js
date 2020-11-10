@@ -1,22 +1,30 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui";
-// eslint-disable-next-line no-unused-vars
-import React from "react";
+import { jsx, Flex, Text } from "theme-ui";
+import ErrorOutlineIcon from "@material-ui/icons/ErrorOutline";
 
 const SupportNote = (p) => {
-
   return (
-    <div
+    <Flex
       sx={{
         fontSize: 1,
-        color: theme => theme.colors.text,
-        backgroundColor: theme => theme.colors.lightgrey,
+        color: (theme) => theme.colors.text,
+        backgroundColor: (theme) => theme.colors.warning,
         padding: [3, 4],
         marginBottom: [3, 4],
       }}
     >
-      Die Schattenwürfe können auf älteren iOS-Geräten und im Safari-Browser aktuell nicht korrekt dargestellt werden. Bitte versuche ein anderes Gerät bzw. einen anderen Browser, um die Karte zu öffnen.
-    </div>
+      <ErrorOutlineIcon
+        fontSize={"medium"}
+        sx={{
+          color: (theme) => theme.colors.text,
+        }}
+      />
+      <Text ml={2}>
+        Die Schattenwürfe können auf einigen iOS-Geräten und im Safari-Browser
+        aktuell nicht korrekt dargestellt werden. Bitte versuche ein anderes
+        Gerät bzw. einen anderen Browser, um die Karte zu öffnen.
+      </Text>
+    </Flex>
   );
 };
 

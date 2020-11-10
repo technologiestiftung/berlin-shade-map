@@ -17,14 +17,15 @@ const SidebarInfo = (p) => {
   const { title, paragraphs } = data;
   const { filter } = c.filter;
 
+  const webpIsSupported = useStoreState((state) => state.webpIsSupported);
   const shadeData = useStoreState((state) => state.shadeData);
   const filterState = useStoreState((state) => state.filter);
 
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
-      {(isSafari || isIE || isIOS ) && <SupportNote />}
-      {shadeData && <TimeSelector />}
+      {(isSafari || isIE || isIOS) && <SupportNote />}
+      {webpIsSupported && shadeData && <TimeSelector />}
       {filterState && <Tags filterValues={filter} filter={filterState} />}
       <LocationSearch />
       {paragraphs.map((p, i) => (

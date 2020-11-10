@@ -1,4 +1,5 @@
-import { action } from "easy-peasy";
+import { action, thunk } from "easy-peasy";
+import { webpIsSupported } from "utils";
 import c from "config";
 
 const MapModel = {
@@ -14,13 +15,28 @@ const MapModel = {
   setStyleIsLoading: action((state, payload) => {
     state.styleIsLoading = payload;
   }),
-  mapboxCookieAccepted: document.cookie ? document.cookie
-    .split('; ')
-    .find(row => row.startsWith('disclaimerAccepted'))
-    .split('=')[1] : false,
+  mapboxCookieAccepted: document.cookie
+    ? document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("disclaimerAccepted"))
+        .split("=")[1]
+    : false,
   setMapboxCookieAccepted: action((state, payload) => {
     state.mapboxCookieAccepted = payload;
-  })
+  }),
+  webpIsSupported: null,
+  setWebpSupport: action((state, payload) => {
+    state.webpIsSupported = payload;
+  }),
+  checkWebpSupport: thunk(async (actions) => {
+    (async () => {
+      if (await webpIsSupported()) {
+        actions.setWebpSupport(true);
+      } else {
+        actions.setWebpSupport(false);
+      }
+    })();
+  }),
 };
 
 export default MapModel;

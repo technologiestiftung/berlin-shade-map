@@ -39,6 +39,9 @@ export default createGlobalStyle`
   }
 
   body {
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+    height: 100vh;
     padding: 0;
     margin: 0;
     position: relative;

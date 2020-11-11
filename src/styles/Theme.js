@@ -35,6 +35,7 @@ export default {
     lightgrey: "#f5f5f5",
     midgrey: "#d8d8d8",
     textgrey: "#343434",
+    warning: "#f6914c",
   },
   text: {
     heading: {

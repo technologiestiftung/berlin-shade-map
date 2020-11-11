@@ -7,7 +7,7 @@ import SidebarClose from "./SidebarClose/";
 import SidebarWrapper from "./SidebarWrapper";
 
 const SidebarContent = styled.div`
-  min-width: 370px;
+  width: calc(100vw - 24px);
   max-width: 370px;
   padding: 20px 15px;
 `;

@@ -23,10 +23,10 @@ export default {
     },
     shades: {
       tileSize: 256,
-      bounds: [13.1,52.3,13.8,52.7],
+      bounds: [13.1, 52.3, 13.8, 52.7],
       minZoom: 15,
       opacity: 0.45,
-    }
+    },
   },
   about: {
     legend: {
@@ -35,19 +35,24 @@ export default {
     title: "Berliner Erfrischungskarte",
     paragraphs: [
       {
-        title: "Worum geht's hier?",
+        title: "Worum geht es hier?",
         content:
           "In der Sommerzeit gibt es besonders morgens und mittags starke Sonneneinstrahlung. Diese Karte zeigt Schattenbereiche im Berliner Stadtgebiet und führt zu Orten zum Erfrischen und Verweilen.",
       },
       {
         title: "Datengrundlage",
         content:
-          "Die genutzten Daten stammen von [FIS-Broker Berlin](https://fbinter.stadt-berlin.de/fb/index.jsp) und von [berlin.de](https://www.berlin.de/). Die Simulation der Schatten basiert auf Höhendaten von Gebäuden und Objekten und der Sonnenstrahlung im Monat Juli. Diese Karte ist ein Open-Source-Projekt und der [Quellcode](https://github.com/technologiestiftung/berlin-shade-map) auf GitHub verfügbar.",
+          "Die genutzten Daten stammen aus dem <a href='https://fbinter.stadt-berlin.de/fb/index.jsp' target='_blank' rel='noopener noreferrer'>FIS-Broker Berlin</a> und von der Webseite <a href='https://www.berlin.de/' target='_blank' rel='noopener noreferrer'>berlin.de</a>. Die Schattensimulation ist berechnet mithilfe von Höhendaten von Gebäuden und Objekten und der mittleren Sonnenstrahlung im Monat Juli. Diese Karte ist ein Open-Source-Projekt. Der <a href='https://github.com/technologiestiftung/berlin-shade-map' target='_blank' rel='noopener noreferrer'>Quellcode</a> ist auf GitHub frei zugänglich verfügbar.",
       },
       {
         title: "",
         content:
-          "[Impressum](https://www.technologiestiftung-berlin.de/de/impressum/) | [Datenschutz](https://www.technologiestiftung-berlin.de/de/datenschutz/)",
+          "<i>Bei der Karte handelt es sich um einen Prototyp. In einzelnen Zoomstärken kann es zu Unregelmäßigkeiten in der Darstellung der Schatten kommen.</i>",
+      },
+      {
+        title: "",
+        content:
+          "<a href='https://www.technologiestiftung-berlin.de/de/impressum/' target='_blank' rel='noopener noreferrer'>Impressum</a> | <a href='https://www.technologiestiftung-berlin.de/de/datenschutz/' target='_blank' rel='noopener noreferrer'>Datenschutz</a>",
       },
     ],
   },
@@ -78,4 +83,13 @@ export default {
       label: "Adresse",
     },
   ],
+  cookies: {
+    text:
+      "Diese Webseite verwendet Cookies, um bestimmte Funktionen zu ermöglichen und das Angebot zu verbessern. Indem du hier fortfährst stimmst du der Nutzung von Cookies zu.",
+    link: {
+      text: "Weitere Informationen",
+      url: "https://www.technologiestiftung-berlin.de/de/datenschutz/",
+    },
+    cookie: "disclaimerAccepted=true;path=/;max-age=31536000;",
+  },
 };

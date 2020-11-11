@@ -19,6 +19,7 @@
     "mapbox-gl": "1.11.1",
     "query-string": "6.13.1",
     "react": "16.13.1",
+    "react-app-polyfill": "^1.0.6",
     "react-device-detect": "^1.13.1",
     "react-dom": "16.13.1",
     "react-mapbox-gl": "4.8.6",
@@ -35,7 +36,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build && echo '/* /index.html  200' | cat >build/_redirects",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jest-environment-jsdom-fifteen",
     "eject": "react-scripts eject",
     "prettier": "prettier",
     "prettier:write": "prettier --write ./src/**/*",
@@ -62,6 +63,8 @@
   "devDependencies": {
     "html-webpack-plugin": "3.2.0",
     "husky": "4.2.5",
+    "jest-environment-jsdom-fifteen": "^1.0.2",
+    "jest-fetch-mock": "3.0.3",
     "lint-staged": "10.2.9",
     "prettier": "1.19.1"
   },

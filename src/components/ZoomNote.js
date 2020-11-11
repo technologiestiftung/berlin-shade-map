@@ -10,8 +10,8 @@ import c from "../config";
 const shadesMinZoom = c.map.shades.minZoom;
 
 const StyledWrapper = styled.div`
-  position: absolute;
-  bottom: 15px;
+  position: fixed;
+  top: 15px;
   right: 15px;
   width: 250px;
   box-shadow: 0 2px 40px 0 rgba(30, 55, 145, 0.15);
@@ -31,8 +31,8 @@ const ZoomNote = () => {
       <div
         sx={{
           fontSize: 1,
-          color: theme => theme.colors.background,
-          backgroundColor: theme => theme.colors.text,
+          color: theme => theme.colors.text,
+          backgroundColor: theme => theme.colors.background,
           padding: [3, 4],
         }}
       >

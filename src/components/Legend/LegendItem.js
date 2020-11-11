@@ -9,6 +9,7 @@ export default (p) => {
         textDecoration: "none",
         color: isFiltered ? "midgrey" : "text",
         display: "flex",
+        alignItems: "baseline",
         fontSize: 1,
         transition: (t) => t.transitions[1],
       }}

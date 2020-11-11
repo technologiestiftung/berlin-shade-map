@@ -1,6 +1,5 @@
 import { action, thunk, computed } from "easy-peasy";
 import { id } from "utils";
-import c from "config";
 
 const DataModel = {
   data: null,
@@ -59,7 +58,7 @@ const DataModel = {
   }),
   setHighlightData: action((state, payload) => {
     state.highlightData = payload;
-    state.mapCenter = payload ? payload.geometry.coordinates : c.map.mapCenter;
+    // state.mapCenter = payload ? payload.geometry.coordinates : c.map.mapCenter;
     // state.mapZoom = payload ? [15] : c.map.mapZoom;
   }),
   setSelectedData: action((state, payload) => (state.selectedData = payload)),

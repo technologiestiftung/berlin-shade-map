@@ -12,6 +12,7 @@ import Sidebar from "modules/Sidebar";
 import Nav from "components/Nav";
 import LoadingOverlay from "components/LoadingOverlay";
 import ZoomNote from "components/ZoomNote";
+import Cookies from "components/Cookies";
 
 const DynamicGlobalStyle = createGlobalStyle``;
 
@@ -30,6 +31,7 @@ const AppWrapper = () => {
   const mapZoom = useStoreState((state) => state.mapZoom);
   const style = process.env.REACT_APP_MAP_STYLE;
 
+  const webpIsSupported = useStoreState((state) => state.webpIsSupported);
   const shadeData = useStoreState((state) => state.shadeData);
   const selectedShadeData = useStoreState((state) => state.selectedShadeData);
 
@@ -44,7 +46,8 @@ const AppWrapper = () => {
           render={() => <Sidebar data={filteredData} />}
         />
         <Nav />
-        <ZoomNote />
+        {webpIsSupported && <ZoomNote />}
+        <Cookies />
         {filteredData && (
           <Map
             data={filteredData}

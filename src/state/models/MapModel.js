@@ -24,7 +24,7 @@ const MapModel = {
   setMapboxCookieAccepted: action((state, payload) => {
     state.mapboxCookieAccepted = payload;
   }),
-  webpIsSupported: null,
+  webpIsSupported: true,
   setWebpSupport: action((state, payload) => {
     state.webpIsSupported = payload;
   }),

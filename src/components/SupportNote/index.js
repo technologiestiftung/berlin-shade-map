@@ -21,8 +21,8 @@ const SupportNote = (p) => {
       />
       <Text ml={2}>
         Die Schattenwürfe können auf einigen iOS-Geräten und im Safari-Browser
-        aktuell nicht korrekt dargestellt werden. Bitte versuche ein anderes
-        Gerät bzw. einen anderen Browser, um die Karte zu öffnen.
+        aktuell nicht dargestellt werden. Bitte versuche ein anderes Gerät bzw.
+        einen anderen Browser, um die Karte zu öffnen.
       </Text>
     </Flex>
   );

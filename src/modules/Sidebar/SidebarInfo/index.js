@@ -23,7 +23,7 @@ const SidebarInfo = (p) => {
   return (
     <>
       <SidebarTitle>{title}</SidebarTitle>
-      {!webpIsSupported && <SupportNote />}
+      {webpIsSupported !== null && !webpIsSupported && <SupportNote />}
       {webpIsSupported && shadeData && <TimeSelector />}
       {filterState && <Tags filterValues={filter} filter={filterState} />}
       <LocationSearch />

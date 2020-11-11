@@ -47,6 +47,11 @@ export default {
       {
         title: "",
         content:
+          "<i>Bei der Karte handelt es sich um einen Prototyp. In einzelnen Zoomstärken kann es zu Unregelmäßigkeiten in der Darstellung der Schatten kommen.</i>",
+      },
+      {
+        title: "",
+        content:
           "<a href='https://www.technologiestiftung-berlin.de/de/impressum/' target='_blank' rel='noopener noreferrer'>Impressum</a> | <a href='https://www.technologiestiftung-berlin.de/de/datenschutz/' target='_blank' rel='noopener noreferrer'>Datenschutz</a>",
       },
     ],

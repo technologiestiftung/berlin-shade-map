@@ -47,7 +47,7 @@ export default {
       {
         title: "",
         content:
-          "<i>Bei der Karte handelt es sich um einen Prototyp. Es kann zu gelegentlichen Unregelmäßigkeiten in der Darstellung der Schatten kommen.</i>",
+          "<i>Bei der Karte handelt es sich um einen Prototyp. In einzelnen Zoomstärken kann es zu Unregelmäßigkeiten in der Darstellung der Schatten kommen.</i>",
       },
       {
         title: "",

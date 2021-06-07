@@ -62,10 +62,10 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "3.2.0",
-    "husky": "4.2.5",
+    "husky": "4.3.8",
     "jest-environment-jsdom-fifteen": "1.0.2",
     "jest-fetch-mock": "3.0.3",
-    "lint-staged": "10.2.9",
+    "lint-staged": "10.5.4",
     "prettier": "1.19.1"
   },
   "husky": {

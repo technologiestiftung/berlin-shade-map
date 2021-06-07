@@ -19,7 +19,7 @@
     "mapbox-gl": "1.11.1",
     "query-string": "6.13.1",
     "react": "16.13.1",
-    "react-app-polyfill": "1.0.6",
+    "react-app-polyfill": "2.0.0",
     "react-device-detect": "1.17.0",
     "react-dom": "16.13.1",
     "react-mapbox-gl": "4.8.6",

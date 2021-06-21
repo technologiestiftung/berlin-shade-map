@@ -17,7 +17,7 @@
     "install": "0.13.0",
     "lodash": "4.17.21",
     "mapbox-gl": "1.11.1",
-    "query-string": "6.13.1",
+    "query-string": "7.0.1",
     "react": "16.13.1",
     "react-app-polyfill": "1.0.6",
     "react-device-detect": "1.17.0",

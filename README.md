@@ -1,3 +1,7 @@
+# Note: This repository is archived and no longer maintained.
+
+Original README below:
+
 # Berliner Erfrischungskarte
 
 > This project was bootstrapped with the [react-map-boilerplate](https://github.com/technologiestiftung/react-map-boilerplate) template. See the [README.md](https://github.com/technologiestiftung/react-map-boilerplate/blob/master/README.md) for more information.
